@@ -1,10 +1,12 @@
-package com.francis.messagesharingapp
+package com.francis.messagesharingapp.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.francis.messagesharingapp.Extensions.showToast
+import com.francis.messagesharingapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -13,21 +15,17 @@ class MainActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         btnShowToast.setOnClickListener {
             // code to be executed once the button is clicked
             Log.i("MainActivity", "Button was clicked")
-            Toast.makeText(this, "Button was clicked", Toast.LENGTH_LONG).show()
+            showToast("Button was clicked")
         }
         btnSendDataToActivity.setOnClickListener {
             val message:String = editText.text.toString()
-            //Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("keys", message) // use put extra to pass message
             startActivity(intent)
         }
-
         btnShareToOtherApps.setOnClickListener {
             val message:String = editText.text.toString()
 
