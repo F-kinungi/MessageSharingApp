@@ -13,9 +13,11 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         val bundle: Bundle? = intent.extras
-        val msg = bundle!!.getString("keys")
-        showToast(msg)
-        tvUserMessage.text = msg
+        bundle?.let {
+            val msg = bundle.getString("keys")
+            showToast(msg)
+            tvUserMessage.text = msg
+        }
     }
 }
 // use the bundle to extract the incoming value
