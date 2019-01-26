@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="showtoastbutton">Onyesha Toast</string>
+    <string name="editTextMessage">Ingiza ujumbe wako</string>
+    <string name="btnsendata">tuma data kwenye shughuli inayofuata</string>
+</resources>

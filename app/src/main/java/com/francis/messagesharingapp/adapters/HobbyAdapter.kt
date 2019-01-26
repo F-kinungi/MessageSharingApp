@@ -14,7 +14,9 @@ import kotlinx.android.synthetic.main.list_items.view.*
 
 // context refers to the hobbiesActivity layout
 class HobbyAdapter(val context: Context, private val hobbies: List<Hobby> ):RecyclerView.Adapter<HobbyAdapter.MyViewHolder>(){
-
+    companion object {
+        val TAG:String = HobbyAdapter::class.java.simpleName
+    }
     //onCreateViewHolder will inflate views to the list_items layout.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
           val view = LayoutInflater.from(context).inflate(R.layout.list_items, parent, false)
